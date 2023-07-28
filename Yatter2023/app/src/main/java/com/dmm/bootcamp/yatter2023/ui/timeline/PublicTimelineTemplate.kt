@@ -22,10 +22,12 @@ import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dmm.bootcamp.yatter2023.ui.theme.Yatter2023Theme
 import com.dmm.bootcamp.yatter2023.ui.timeline.bindingmodel.StatusBindingModel
+import java.util.Date
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -41,15 +43,20 @@ fun PublicTimelineTemplate(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = "タイムライン")
+                    Text(text = "Timeline")
                 },
+                backgroundColor = Color(android.graphics.Color.parseColor("#29B6FC"))
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = onClickPost) {
+            FloatingActionButton(
+                onClick = onClickPost,
+                backgroundColor = Color(android.graphics.Color.parseColor("#29B6FC"))
+                ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = "post"
+                    contentDescription = "post",
+
                 )
             }
         },
@@ -95,6 +102,7 @@ private fun PublicTimelineTemplatePreview() {
                         username = "username",
                         avatar = null,
                         content = "preview content",
+                        createAt = "2023-01-01",
                         attachmentMediaList = listOf()
                     )
                 ),

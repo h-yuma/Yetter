@@ -15,6 +15,7 @@ object StatusConverter {
             username = status.account.username.value,
             avatar = status.account.avatar.toString(),
             content = status.content,
+            createAt = status.createAt,
             attachmentMediaList = MediaConverter.convertToDomainModel(status.attachmentMediaList)
         )
 }

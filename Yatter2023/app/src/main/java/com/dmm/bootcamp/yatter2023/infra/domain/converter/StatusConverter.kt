@@ -12,6 +12,7 @@ object StatusConverter {
     id = StatusId(json.id),
     account = AccountConverter.convertToDomainModel(json.account),
     content = json.content ?: "",
+    createAt = json.createAt ?: "",
     attachmentMediaList = MediaConverter.convertToDomainModel(json.attachmentMediaList)
   )
 }
